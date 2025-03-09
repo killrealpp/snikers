@@ -1,0 +1,40 @@
+.drawItem{
+    width: 100%;
+    border: 1px solid #f3f3f3;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    &:hover{
+        box-shadow: 0 4px 6px 2px rgba(0,0,0, 0.1);
+    }
+}
+
+.draw{
+    &__img{
+        width: 70px;
+        height: 70px;
+        &-remove:hover{
+            box-shadow: 0 2px 2px 2px rgba(0,0,0, 0.1);
+            border-radius: 9px;
+            cursor: pointer;
+        }
+    }
+    &__title{
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 9px;
+        line-height: 1.2;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 150px;
+    }
+    &__sum{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 0;
+    }
+}
