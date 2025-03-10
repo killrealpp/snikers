@@ -9,7 +9,7 @@
                 v-model="cartStore.searchQuery"
             />
             <my-select
-                class="select"
+                class=""
                 v-model="cartStore.selectedSort"
                 :options="cartStore.sortOptions"
             ></my-select>

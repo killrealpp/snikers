@@ -6,6 +6,7 @@
     left: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
 
     &__content {
         position: fixed;
@@ -19,7 +20,7 @@
         margin-bottom: 30px;
         font-size: 24px;
         font-weight: 600;
-
+        z-index: 10;
 
         &-title {
             margin-bottom: 30px;
