@@ -38,3 +38,16 @@
         line-height: 0;
     }
 }
+
+@media (max-width: 1040px){
+    .drawItem{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 555px){
+    .drawItem{
+        flex-direction: row;
+    }
+}

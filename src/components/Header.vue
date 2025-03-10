@@ -8,9 +8,28 @@
                     <p class="logo__text">Магазин лучших кроссовок</p>
                 </div>
             </div>
+            <button class="burger__btn" :class="{'burger__btn--close': isMenuOpen}" @click="toggleMenu">
+                {{ isMenuOpen ? '✖' : '☰' }}
+            </button>
+            <nav class="menu-burger" :class="{'menu-burger--open': isMenuOpen}">
+                <ul class="menu-burger__list">
+                    <li class="menu-burger__item cart" @click="cartStore.showDrawer(); toggleMenu()">
+                        <a class="menu-burger__link">
+                            <span v-if="!cartStore.drawerList.length">Корзина</span>
+                            <span v-else style="font-weight: 700; color: #5C5C5C">{{ cartStore.totalSum }} руб</span>
+                        </a>
+                    </li>
+                    <li class="menu-burger__item heart">
+                        <a @click="router.push('/favorite'); toggleMenu()" class="menu-burger__link">Закладки</a>
+                    </li>
+                    <li class="menu-burger__item profile">
+                        <a @click="router.push('/profile'); toggleMenu()" class="menu-burger__link">Профиль</a>
+                    </li>
+                </ul>
+            </nav>
             <nav class="menu">
                 <ul class="menu__list">
-                    <li class="menu__item cart" @click="cartStore.showDrawer">
+                    <li class="menu__item cart" @click="cartStore.showDrawer()">
                         <a class="menu__item-link">
                             <span v-if="!cartStore.drawerList.length">Корзина</span>
                             <span v-else style="font-weight: 700; color: #5C5C5C">{{ cartStore.totalSum }} руб</span>
@@ -31,11 +50,17 @@
 <script setup>
 import { useCartStore } from '@/store/cartStore';
 import { useRouter } from 'vue-router';
+import { ref } from 'vue';
 
-const router = useRouter()
+const router = useRouter();
+const cartStore = useCartStore();
+const isMenuOpen = ref(false);
 
-const cartStore = useCartStore()
 
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+    document.body.style.overflow = isMenuOpen.value ? 'hidden' : '';
+};
 </script>
 
 <style scoped lang="scss">

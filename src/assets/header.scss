@@ -97,3 +97,113 @@
         background-size: cover;
     }
 }
+
+.burger__btn{
+    display: none;
+}
+
+.menu-burger{
+    display: none;
+}
+
+@media (max-width: 1000px){
+    .header{
+        padding: 43px 30px;
+    }
+}   
+
+
+@media (max-width: 700px) {
+    .menu{
+        display: none;
+    }
+    .burger__btn{
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 17%;
+        right: 5%;
+        z-index: 1;
+        &--close{
+            font-size: 30px;
+        }
+    }
+    .menu-burger{
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fff; 
+        box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 4;
+    }
+    .menu-burger--open{
+        right: 0;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .menu-burger__list {
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        text-align: center; 
+    }
+    .menu-burger__item {
+        margin-bottom: 20px; 
+        text-align: center; 
+    }
+    .menu-burger__link:hover {
+        color: #ff6347;
+    }
+
+    .cart[data-v-61dd7a3d]::after {
+        position: absolute;
+        content: "";
+        background-image: url(http://localhost:8080/img/cart.573e86ed.svg);
+        width: 20px;
+        height: 20px;
+        left: -30%;
+        top: 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .heart[data-v-61dd7a3d]::after {
+        position: absolute;
+        content: "";
+        background-image: url(http://localhost:8080/img/heart.134c7b88.svg);
+        width: 22px;
+        height: 20px;
+        left: -30%;
+        top: 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .profile[data-v-61dd7a3d]::after {
+        position: absolute;
+        content: "";
+        background-image: url(http://localhost:8080/img/profile.3fd5dcaf.svg);
+        width: 20px;
+        height: 20px;
+        left: -30%;
+        top: 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .logo__title{
+        font-size: 14px;
+    }
+    .logo__text{
+        font-size: 10px;
+    }
+}

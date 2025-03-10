@@ -2,7 +2,7 @@
   <main class="main">
     <div class="container">
       <Header />
-      <Slider />
+      <Slider class="slider__own" />
       <CartList />
       <Drawer v-if="cartStore.visible" />
     </div>
@@ -34,5 +34,24 @@ main {
   max-width: 960px;
   margin: 0 auto;
   padding: 0;
+}
+
+@media (max-width: 1000px){
+  main{
+    padding: 0 30px;  
+  }
+}
+
+
+@media (max-width: 665px){
+  .slider__own{
+    display: none;
+  }
+}
+
+@media (max-width: 450px){
+  main{
+    padding: 0 15px;  
+  }
 }
 </style>
